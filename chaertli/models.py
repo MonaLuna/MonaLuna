@@ -8,3 +8,10 @@ class Chaertli(models.Model):
 
 	def __str__(self):
 		return self.created.strftime("%Y-%m-%d")
+
+
+class Sitae(models.Model):
+	
+	chaertli = models.ForeignKey(Chaertli)
+	loesig = models.BooleanField(default=False)
+		
