@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Chaertli, Sitae, TextInhaut
+
+
+admin.site.register(Chaertli)
+admin.site.register(Sitae)
+admin.site.register(TextInhaut)
