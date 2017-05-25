@@ -14,4 +14,9 @@ class Sitae(models.Model):
 	
 	chaertli = models.ForeignKey(Chaertli)
 	loesig = models.BooleanField(default=False)
-		
+
+
+class TextInhaut(models.Model):
+	
+	sitae = models.ForeignKey(Sitae)
+	inhaut = models.TextField()
