@@ -1,0 +1,14 @@
+{% extends "chaertli/base.html" %}
+
+{% block title %}
+Mini Uflistig
+{% endblock %}
+
+{% block body %}
+<h1>Ds si mini Chaertli</h1>
+<ul>
+{% for chaertli in object_list %}
+	<li><a href="{% url "chaertli-detail" pk=chaertli.pk %}">{{ chaertli.pk }}, {{ chaertli.created }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
