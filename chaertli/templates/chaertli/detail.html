@@ -1,0 +1,37 @@
+{% extends "chaertli/base.html" %}
+
+{% block title %}
+Chaertli {{ chaertli.pk }}
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+	window.onload = function() {
+		var	loesungen = document.getElementById("loesungen");
+		setTimeout(function() {
+			loesungen.style.display = "block";
+		}, 10000);	
+	};
+</script>
+{% endblock %}
+
+{% block body %}
+<h1>Chaertli {{ chaertli.pk }}</h1>
+<p>Isch am {{ chaertli.created }} ersteut worde.</p>
+
+<h2>Frage</h2>
+<div>
+{% for inhaut in fragen %}
+{{ inhaut.inhaut }}
+{% endfor %}
+</div>
+
+<h2>Lösung</h2>
+<div id="loesungen" style="display: none;">
+{% for inhaut in loesungen %}
+{{ inhaut.inhaut }}
+{% endfor %}
+</div>
+
+<p><a href="{% url "chaertli-list" %}">Zrügg zur Liste</a></p>
+{% endblock %}
